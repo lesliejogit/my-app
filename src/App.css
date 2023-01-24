@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #f4f9ff;
+  --primary-focus: #04121C;
+  --secondary-color: #2047DD;
+  --accent-color: #AC20DD;
+
+  --neutral-focus: #BDDff5;
+  --neutral-content: #A0CFED;
+
+  --base-100: #273642;
+  --base-200: #16232E;
+  --base-300: #04121C;
+}
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #f4f9ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: blue;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.0000rem + 4.4444vw, 4rem);
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  margin: 0 !important;
+  padding: 0;
+  color: var(--primary-focus);
+}
