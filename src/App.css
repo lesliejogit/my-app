@@ -30,6 +30,33 @@
   color: #61dafb;
 }
 
+.Google-calendar-button{
+  background-color:#4c8bf5;
+  border: #000000;
+      font-family: "Poppins",sans-serif;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: normal;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.Google-calendar-button:hover{
+  background-color:#3d6ede;
+  border: #2e6da4;
+      font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: normal;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
 h1 {
   font-size: clamp(2rem, 1.0000rem + 4.4444vw, 4rem);
   font-family: "Poppins", sans-serif;
