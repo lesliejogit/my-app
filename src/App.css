@@ -1,3 +1,53 @@
+@media (max-width: 1030px ){ /* For Laptops when resizing screen */
+  /* p{
+    font-size: 10px;
+  } */
+  h2{
+    font-size: 15px;
+    min-width: 80px;
+  }
+  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+    font-size: 9px;
+  }
+  .schedule--event--title{
+    max-height: 50px;
+    border-width: 1px !important;
+  }
+
+  .schedule--event--location{
+    margin-right: 50px;
+  }
+}
+
+@media(max-width: 480px){ /* For mobile phones */
+  h2{
+    font-size: 6px;
+    min-width: 35px;
+  }
+
+  .schedule--event{
+    height: 50px !important;
+    margin: 0px 12px;
+    /* margin-right: 10px; */
+  }
+  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+    font-size: 6px;
+  }
+
+  
+  .schedule--event--title{
+    max-height: 50px;
+
+  }
+  .schedule--event--location{
+    margin-right: 20px !important;
+  }
+
+  
+}
+
+
+
 :root {
   --primary-color: #f4f9ff;
   --primary-focus: #04121C;
@@ -38,8 +88,57 @@ h1 {
   padding: 0;
   color: var(--primary-focus);
 }
+.schedule--table{
+  padding: 15px 0px;
+  font-family:"Poppins";
+  
+}
 
 .schedule--div{
   display: flex;
   flex-direction: row;
 }
+
+
+
+.schedule--event{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100px;
+
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
+  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  
+  background-color: #FFFFFF;
+  border-radius: 60px;
+
+  font-size: 15px;
+  color:black
+}
+
+.schedule--event > div {
+  padding: 0px 10px;
+}
+
+.schedule--event--title{
+  border-left: solid;
+  border-right: solid;
+  border-width: 2px;
+}
+
+.schedule--event--description{
+  text-align: left;
+  max-width: 500px;
+  
+}
+
+.schedule--event--location{
+  background-color: #bddff5 ;
+  margin-right: 30px;
+  border-radius: 30px;
+}
+
+
