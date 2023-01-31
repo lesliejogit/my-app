@@ -1,20 +1,18 @@
 @media (max-width: 1030px ){ /* For Laptops when resizing screen */
-  /* p{
-    font-size: 10px;
-  } */
-  h2{
+
+  .event--title > h2{
     font-size: 15px;
     min-width: 80px;
   }
-  .schedule--event--title, .schedule--event--time, .schedule--event--description{
-    font-size: 9px;
+  .event--title, .event--time, .event--description{
+    font-size: 10px;
   }
-  .schedule--event--title{
+  .event--title{
     max-height: 50px;
     border-width: 1px !important;
   }
 
-  .schedule--event--location{
+  .event--location{
     margin-right: 50px;
   }
 }
@@ -25,28 +23,25 @@
     min-width: 35px;
   }
 
-  .schedule--event{
+  .event--container{
     height: 50px !important;
     margin: 0px 12px;
     /* margin-right: 10px; */
   }
-  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+  .event--title, .event--time, .event--description{
     font-size: 6px;
   }
 
   
-  .schedule--event--title{
+  .event--title{
     max-height: 50px;
 
   }
-  .schedule--event--location{
+  .event--location{
     margin-right: 20px !important;
   }
 
-  
 }
-
-
 
 :root {
   --primary-color: #f4f9ff;
@@ -88,20 +83,17 @@ h1 {
   padding: 0;
   color: var(--primary-focus);
 }
-.schedule--table{
+
+
+
+.event--table{
   padding: 15px 0px;
   font-family:"Poppins";
   
 }
 
-.schedule--div{
-  display: flex;
-  flex-direction: row;
-}
 
-
-
-.schedule--event{
+.event--container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -119,23 +111,23 @@ h1 {
   color:black
 }
 
-.schedule--event > div {
+.event--container > div {
   padding: 0px 10px;
 }
 
-.schedule--event--title{
+.event--title{
   border-left: solid;
   border-right: solid;
   border-width: 2px;
 }
 
-.schedule--event--description{
+.event--description{
   text-align: left;
   max-width: 500px;
   
 }
 
-.schedule--event--location{
+.event--location{
   background-color: #bddff5 ;
   margin-right: 30px;
   border-radius: 30px;

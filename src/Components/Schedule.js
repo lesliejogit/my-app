@@ -1,5 +1,5 @@
 export default function Schedule(props){
-    const generateEvents = () =>{
+    const generateWorkshopEvents = () =>{
         const numEvents = 5
         const sampleData = []
         const sampleEvent = {
@@ -18,14 +18,25 @@ export default function Schedule(props){
     
         return sampleData
     }
+
+
+    const generateTentativeSchedule = () =>{
+        
+    }
+
+    /*
+    schedule--event --> event--container
+    time --> event--time
+    title --> event--title ...
+    */
     
-    const sampleEvents = generateEvents().map(table => (
-        <div className="schedule--table">
-            <div className="schedule--event">
-                <div className="schedule--event--time">{table.time}</div>
-                <div className="schedule--event--title"><b>{table.event.title}</b> <br/> {table.event.category}</div>
-                <div className="schedule--event--description">{table.description} </div>
-                <div className="schedule--event--location"> <h2>{table.location}</h2></div>
+    const sampleEvents = generateWorkshopEvents().map(table => (
+        <div className="event--table">
+            <div className="event--container">
+                <div className="event--time">{table.time}</div>
+                <div className="event--title"><b>{table.event.title}</b> <br/> {table.event.category}</div>
+                <div className="event--description">{table.description} </div>
+                <div className="event--location"> <h2>{table.location}</h2></div>
             </div>
         </div> 
     ))
