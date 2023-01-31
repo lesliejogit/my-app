@@ -23,16 +23,17 @@
     min-width: 35px;
   }
 
-  .event--container{
+  .grid--container{
     height: 50px !important;
     margin: 0px 0px 0px 10px;
-    /* margin-right: 10px; */
+    
+    margin-right: 10px;
   }
   .event--title, .event--time, .event--description{
     font-size: 6px;
   }
 
-  
+
   .event--title{
     max-height: 50px;
 
@@ -42,15 +43,13 @@
   }
 
    .tentativeSchedule--column .event--location{
-    /* scale: 70% !important; */
-    /* font-size: 6px; */
     margin-left: 10px !important;
     margin-right: 10px;
-    /* margin-right: 20px !important ; */
   } 
-  
 
-
+  .tentativeSchedule--column .event--container{
+    max-height: 50px;
+  }
 }
 
 :root {
@@ -99,16 +98,10 @@ h2{
   color: black
 }
 
-.event--table{
-  padding: 15px 0px;
-  font-family:"Poppins";
+.tentativeSchedule--container .event--container{
+  display: grid !important ; 
+  grid-template-columns: 20% 40% 1fr !important ;
   
-}
-
-
-.event--container{
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 
@@ -124,7 +117,37 @@ h2{
   color:black
 }
 
-.event--container > div {
+.tentativeSchedule--container .event--location{
+  margin-left: 30px ;
+  max-width: 100px !;
+}
+
+.event--table{
+  padding: 15px 0px;
+  font-family:"Poppins";
+  
+}
+
+
+.grid--container{
+  display: grid !important ; 
+  grid-template-columns: 1fr 1fr 2fr 1fr !important ;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100px;
+
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
+  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  
+  background-color: #FFFFFF;
+  border-radius: 60px;
+
+  font-size: 15px;
+  color:black
+}
+
+.grid--container > div {
   padding: 0px 10px;
 }
 
@@ -137,7 +160,6 @@ h2{
 .event--description{
   text-align: left;
   max-width: 500px;
-  
 }
 
 .event--location{
@@ -145,7 +167,6 @@ h2{
   margin-right: 15px;
   border-radius: 30px;
 }
-
 
 .tentativeSchedule--container{
   display: inline-grid;
@@ -156,20 +177,11 @@ h2{
 
 .tentativeSchedule--column{
   scale: 90%;
-  
-}
-
-.tentativeSchedule--container .event--container{
-  display: grid; 
-  grid-template-columns: 20% 40% 1fr;
-}
-
-.tentativeSchedule--container .event--location{
-  margin-left: 30px;
-  max-width: 100px;
 }
 
 
-/* .tentativeSchedule--container .event--title{
-  width: 50px;
+
+/* .event--table .event--container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 } */

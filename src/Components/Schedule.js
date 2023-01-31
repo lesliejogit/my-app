@@ -67,7 +67,7 @@ export default function Schedule(props){
     
     const sampleEvents = props.workshopData.map(table => (
         <div className="event--table">
-            <div className="event--container">
+            <div className="grid--container">
                 <div className="event--time">{table.time}</div>
                 <div className="event--title"><b>{table.title}</b> <br/> {table.category}</div>
                 <div className="event--description">{table.description} </div>
