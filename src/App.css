@@ -1,6 +1,6 @@
 @media (max-width: 1030px ){ /* For Laptops when resizing screen */
 
-  .event--title > h2{
+  .event--title > h3{
     font-size: 15px;
     min-width: 80px;
   }
@@ -18,14 +18,14 @@
 }
 
 @media(max-width: 480px){ /* For mobile phones */
-  h2{
+  h3{
     font-size: 6px;
     min-width: 35px;
   }
 
   .event--container{
     height: 50px !important;
-    margin: 0px 12px;
+    margin: 0px 0px 0px 10px;
     /* margin-right: 10px; */
   }
   .event--title, .event--time, .event--description{
@@ -38,8 +38,18 @@
 
   }
   .event--location{
-    margin-right: 20px !important;
+    margin-right: 10px !important;
   }
+
+   .tentativeSchedule--column .event--location{
+    /* scale: 70% !important; */
+    /* font-size: 6px; */
+    margin-left: 10px !important;
+    margin-right: 10px;
+    /* margin-right: 20px !important ; */
+  } 
+  
+
 
 }
 
@@ -84,7 +94,10 @@ h1 {
   color: var(--primary-focus);
 }
 
-
+h2{
+  font-family: "Poppins";
+  color: black
+}
 
 .event--table{
   padding: 15px 0px;
@@ -129,8 +142,34 @@ h1 {
 
 .event--location{
   background-color: #bddff5 ;
-  margin-right: 30px;
+  margin-right: 15px;
   border-radius: 30px;
 }
 
 
+.tentativeSchedule--container{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-top: -30px;
+}
+
+.tentativeSchedule--column{
+  scale: 90%;
+  
+}
+
+.tentativeSchedule--container .event--container{
+  display: grid; 
+  grid-template-columns: 20% 40% 1fr;
+}
+
+.tentativeSchedule--container .event--location{
+  margin-left: 30px;
+  max-width: 100px;
+}
+
+
+/* .tentativeSchedule--container .event--title{
+  width: 50px;
+} */

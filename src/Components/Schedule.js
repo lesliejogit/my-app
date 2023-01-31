@@ -21,7 +21,42 @@ export default function Schedule(props){
 
 
     const generateTentativeSchedule = () =>{
+
+
         
+        return (
+        <div className="tentativeSchedule--container"> 
+            <div className="tentativeSchedule--column">
+                <h2>Saturday</h2>
+                <div className="event--table">
+                    <div className="event--container">
+                        <div className="event--time">time</div>
+                        <div className="event--title"><b>Python Competetion</b> <br/> category</div>
+                        <div className="event--location"> <h3> location</h3></div>
+                    </div>
+                </div>
+
+                <div className="event--table">
+                    <div className="event--container">
+                        <div className="event--time">time</div>
+                        <div className="event--title"><b>title</b> <br/> category</div>
+                        <div className="event--location"> <h3> location</h3></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="tentativeSchedule--column">
+                <h2>Sunday</h2>
+                <div className="event--table">
+                    <div className="event--container">
+                        <div className="event--time">time</div>
+                        <div className="event--title"><b>title</b> <br/> category</div>
+                        <div className="event--location"> <h3> location</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        )
     }
 
     /*
@@ -30,19 +65,27 @@ export default function Schedule(props){
     title --> event--title ...
     */
     
-    const sampleEvents = generateWorkshopEvents().map(table => (
+    const sampleEvents = props.workshopData.map(table => (
         <div className="event--table">
             <div className="event--container">
                 <div className="event--time">{table.time}</div>
-                <div className="event--title"><b>{table.event.title}</b> <br/> {table.event.category}</div>
+                <div className="event--title"><b>{table.title}</b> <br/> {table.category}</div>
                 <div className="event--description">{table.description} </div>
-                <div className="event--location"> <h2>{table.location}</h2></div>
+                <div className="event--location"> <h3>{table.location}</h3></div>
             </div>
         </div> 
     ))
 
+    const tentativeSchedule = generateTentativeSchedule()
+
     
     return (
-        sampleEvents
+        <div>
+            <h2>Tentative Schedule</h2>
+            {tentativeSchedule}
+
+            <h2>Workshop Events</h2>
+            {sampleEvents}
+        </div>
     )
   }
