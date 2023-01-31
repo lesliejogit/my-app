@@ -15,6 +15,9 @@
 //     )
 //   }
 
+
+
+
 export default function Schedule(props){
     const generateEvents = () =>{
         const numEvents = 5
@@ -39,10 +42,10 @@ export default function Schedule(props){
     const sampleEvents = generateEvents().map(table => (
         <div className="schedule--table">
             <div className="schedule--event">
-                <div>{table.time}</div>
+                <div className="schedule--event--time">{table.time}</div>
                 <div className="schedule--event--title"><b>{table.event.title}</b> <br/> {table.event.category}</div>
                 <div className="schedule--event--description">{table.description} </div>
-                <div className="schedule--event-location"> <h2>{table.location}</h2></div>
+                <div className="schedule--event--location"> <h2>{table.location}</h2></div>
             </div>
         </div> 
     ))

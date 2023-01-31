@@ -1,7 +1,49 @@
-@media (max-width: 1030px ){
-  /* h2{
+@media (max-width: 1030px ){ /* For Laptops when resizing screen */
+  /* p{
     font-size: 10px;
   } */
+  h2{
+    font-size: 15px;
+    min-width: 80px;
+  }
+  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+    font-size: 9px;
+  }
+  .schedule--event--title{
+    max-height: 50px;
+    border-width: 1px !important;
+  }
+
+  .schedule--event--location{
+    margin-right: 50px;
+  }
+}
+
+@media(max-width: 480px){ /* For mobile phones */
+  h2{
+    font-size: 6px;
+    min-width: 35px;
+  }
+
+  .schedule--event{
+    height: 50px !important;
+    margin: 0px 12px;
+    /* margin-right: 10px; */
+  }
+  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+    font-size: 6px;
+  }
+
+  
+  .schedule--event--title{
+    max-height: 50px;
+
+  }
+  .schedule--event--location{
+    margin-right: 20px !important;
+  }
+
+  
 }
 
 
@@ -46,11 +88,18 @@ h1 {
   padding: 0;
   color: var(--primary-focus);
 }
-
-
 .schedule--table{
-  padding: 20px 0px;
+  padding: 15px 0px;
+  font-family:"Poppins";
+  
 }
+
+.schedule--div{
+  display: flex;
+  flex-direction: row;
+}
+
+
 
 .schedule--event{
   display: flex;
@@ -60,7 +109,10 @@ h1 {
 
   height: 100px;
 
-  background-color: #D9D9D9 ;
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
+  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  
+  background-color: #FFFFFF;
   border-radius: 60px;
 
   font-size: 15px;
@@ -68,7 +120,7 @@ h1 {
 }
 
 .schedule--event > div {
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 .schedule--event--title{
@@ -83,10 +135,9 @@ h1 {
   
 }
 
-.schedule--event-location{
-  background-color: #FFFFFF ;
-  margin-right: 50px;
-
+.schedule--event--location{
+  background-color: #bddff5 ;
+  margin-right: 30px;
   border-radius: 30px;
 }
 
@@ -101,42 +152,4 @@ h1 {
   font-size: .7rem;
   font-weight: bold;
 }
-
-
-
-/* Prior css*/
-
-/* .schedule--table{
-  margin: 0px 20px
-}
-
-.schedule--div{
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  
-  padding: 10px;
-  border-radius: 55px;
-  background-color: #D9D9D9;
-  color:black;
-}
-
-.schedule--div  p {
-  font-size: 15px;
-}
-
-.schedule--description{
-  
-}
-
-.schedule--title--div{
-  border-left: solid;
-  border-right: solid;
-}
-
-.schedule--location{
-  background-color: #FFFFFF;
-
-} */
-
 
