@@ -1,26 +1,24 @@
 export default function Schedule(props){
-    const generateWorkshopEvents = () =>{
-        const numEvents = 5
-        const sampleData = []
-        const sampleEvent = {
-            time: "00:00AM",
-            event:{
-                title:"Python Competetion",
-                category: "Coding Competetion"
-            },
-            description: "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language",
-            location: "Room 402"
-        }
-    
-        for (let i=0;i<numEvents; i++){
-            sampleData.push(sampleEvent)
-        }
-    
-        return sampleData
-    }
-
-
     const generateTentativeSchedule = () =>{
+
+        const saturdayEvents = props.tentativeSchedule.saturday.map(event =>(
+            <div className="event--table">
+            <div className="event--container">
+                <div className="event--time">{event.time}</div>
+                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                <div className="event--location"> <h3> {event.location} </h3></div>
+            </div>
+        </div>
+        ))
+        const sundayEvents = props.tentativeSchedule.sunday.map(event =>(
+            <div className="event--table">
+            <div className="event--container">
+                <div className="event--time">{event.time}</div>
+                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                <div className="event--location"> <h3> {event.location} </h3></div>
+            </div>
+        </div>
+        ))
 
 
         
@@ -28,32 +26,12 @@ export default function Schedule(props){
         <div className="tentativeSchedule--container"> 
             <div className="tentativeSchedule--column">
                 <h2>Saturday</h2>
-                <div className="event--table">
-                    <div className="event--container">
-                        <div className="event--time">time</div>
-                        <div className="event--title"><b>Python Competetion</b> <br/> category</div>
-                        <div className="event--location"> <h3> location</h3></div>
-                    </div>
-                </div>
-
-                <div className="event--table">
-                    <div className="event--container">
-                        <div className="event--time">time</div>
-                        <div className="event--title"><b>title</b> <br/> category</div>
-                        <div className="event--location"> <h3> location</h3></div>
-                    </div>
-                </div>
-            </div>
+                {saturdayEvents}
+            </div> 
             
             <div className="tentativeSchedule--column">
                 <h2>Sunday</h2>
-                <div className="event--table">
-                    <div className="event--container">
-                        <div className="event--time">time</div>
-                        <div className="event--title"><b>title</b> <br/> category</div>
-                        <div className="event--location"> <h3> location</h3></div>
-                    </div>
-                </div>
+                {sundayEvents}
             </div>
         </div>
         )
@@ -65,7 +43,7 @@ export default function Schedule(props){
     title --> event--title ...
     */
     
-    const sampleEvents = props.workshopData.map(table => (
+    const workshopEvents = props.workshopData.map(table => (
         <div className="event--table">
             <div className="grid--container">
                 <div className="event--time">{table.time}</div>
@@ -85,7 +63,7 @@ export default function Schedule(props){
             {tentativeSchedule}
 
             <h2>Workshop Events</h2>
-            {sampleEvents}
+            {workshopEvents}
         </div>
     )
   }

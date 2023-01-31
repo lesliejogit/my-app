@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1>Schedule Alerts</h1>
-      <Schedule workshopData={scheduleData.workshopData}/>
+      <Schedule workshopData={scheduleData.workshopData} tentativeSchedule={scheduleData.tentativeSchedule}/>
 
       </header>
     </div>
