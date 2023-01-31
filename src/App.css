@@ -141,4 +141,15 @@ h1 {
   border-radius: 30px;
 }
 
+#openModalBtn{
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  font-size: .7rem;
+  font-weight: bold;
+}
 
