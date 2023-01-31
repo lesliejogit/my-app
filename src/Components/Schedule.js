@@ -15,9 +15,6 @@
 //     )
 //   }
 
-
-
-
 export default function Schedule(props){
     const generateEvents = () =>{
         const numEvents = 5
@@ -30,12 +27,12 @@ export default function Schedule(props){
             },
             description: "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language",
             location: "Room 402"
+            
         }
     
         for (let i=0;i<numEvents; i++){
             sampleData.push(sampleEvent)
         }
-    
         return sampleData
     }
     

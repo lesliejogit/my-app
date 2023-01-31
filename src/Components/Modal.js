@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Modal.css"
-import logo1 from './img/discord.png';
-import logo2 from './img/google.png';
+import logo2 from './google.png';
+import logo1 from './discord.png';
 
 
 function Modal({closeModal}) {
@@ -10,7 +10,7 @@ function Modal({closeModal}) {
         <div className='modalContainer'>
             
             <div className='title'>
-                <h1 className='modalTitle'>Where to get Notified</h1>
+                <h2 className='modalTitle'>Where to get Notified</h2>
                 <div className='closeBtn'>
                     <button onClick={() => closeModal(false)}> × </button>
                 </div>
