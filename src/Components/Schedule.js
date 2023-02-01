@@ -1,17 +1,18 @@
 export default function Schedule(props){
+    const {nanoid} = props
     const generateTentativeSchedule = () =>{
 
-        const saturdayEvents = props.tentativeSchedule.saturday.map(event =>(
-            <div className="event--table">
-            <div className="event--container">
-                <div className="event--time">{event.time}</div>
-                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
-                <div className="event--location"> <h3> {event.location} </h3></div>
+        const saturdayEvents = props.saturdaySchedule.map(event =>(
+            <div className="event--table" key={event.id} onClick={props.handleClick} id={event.id} name="saturday" >
+                <div className="event--container">
+                    <div className="event--time">{event.time}</div>
+                    <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                    <div className="event--location"> <h3> {event.location} </h3></div>
+                </div>
             </div>
-        </div>
         ))
-        const sundayEvents = props.tentativeSchedule.sunday.map(event =>(
-            <div className="event--table">
+        const sundayEvents = props.sundaySchedule.map(event =>(
+            <div className="event--table" key={event.id} onClick={props.handleClick} id={event.id} name="sunday" >
             <div className="event--container">
                 <div className="event--time">{event.time}</div>
                 <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
@@ -44,7 +45,7 @@ export default function Schedule(props){
     */
     
     const workshopEvents = props.workshopData.map(table => (
-        <div className="event--table">
+        <div className="event--table" key={nanoid()}>
             <div className="grid--container">
                 <div className="event--time">{table.time}</div>
                 <div className="event--title"><b>{table.title}</b> <br/> {table.category}</div>

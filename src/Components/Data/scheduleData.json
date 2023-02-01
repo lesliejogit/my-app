@@ -37,8 +37,8 @@
         }
     ],
 
-    "tentativeSchedule":{
-        "saturday": [
+    "tentativeScheduleData":{
+        "saturdayData": [
             {
                 "time" :"00:00AM",
                 "title" :"Python Competition",
@@ -53,7 +53,7 @@
             }
         ],
 
-        "sunday" :[
+        "sundayData" :[
             {
                 "time" :"00:00AM",
                 "title" :"Python Competition",
