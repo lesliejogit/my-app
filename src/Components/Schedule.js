@@ -1,3 +1,5 @@
+import PopUp from "./PopUp"
+
 export default function Schedule(props){
     const {nanoid} = props
     const generateTentativeSchedule = () =>{
@@ -9,15 +11,17 @@ export default function Schedule(props){
                     <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
                     <div className="event--location"> <h3> {event.location} </h3></div>
                 </div>
+                {event.isClicked && <PopUp/>}
             </div>
         ))
         const sundayEvents = props.sundaySchedule.map(event =>(
             <div className="event--table" key={event.id} onClick={props.handleClick} id={event.id} name="sunday" >
-            <div className="event--container">
-                <div className="event--time">{event.time}</div>
-                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
-                <div className="event--location"> <h3> {event.location} </h3></div>
+                <div className="event--container">
+                    <div className="event--time">{event.time}</div>
+                    <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                    <div className="event--location"> <h3> {event.location} </h3></div>
             </div>
+            {event.isClicked && <PopUp/>}
         </div>
         ))
 

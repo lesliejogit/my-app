@@ -25,13 +25,13 @@ function App() {
     }))
   })
 
-  console.log("Saturday Schedule: ", saturdaySchedule)
-  console.log("Sunday Schedule: ",sundaySchedule)
 
   const handleClick = (event) =>{
     const target = event.currentTarget // * gets target, and its attributes
     const {id} = target // ! ID of schedule
 
+
+    // * If the id matches with the event that the user clicked, then its isClicked bool value becomes its opposite value
     setSaturdaySchedule(prevSaturdaySchedule => {
       return prevSaturdaySchedule.map(schedule =>({
         ...schedule,
@@ -46,8 +46,6 @@ function App() {
       }))
     })
   }
-
-
 
   return (
     <div className="App">
