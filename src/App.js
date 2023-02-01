@@ -1,51 +1,87 @@
 import './App.css';
 import {nanoid} from "nanoid"
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import scheduleData from "./Components/Data/scheduleData.json"
 import Schedule from './Components/Schedule';
+import PopUp from './Components/PopUp';
 
 function App() {
 
-  const {workshopData,tentativeScheduleData} = scheduleData
-  
-  const [saturdaySchedule,setSaturdaySchedule] = useState(() =>{
-    const {saturdayData} = tentativeScheduleData
-    return saturdayData.map(data => ({
-      ...data,
-      isClicked: false,
-      id: nanoid()
-    }))
-  })
-  const [sundaySchedule, setSundaySchedule] = useState(() =>{
-    const {sundayData} = tentativeScheduleData
-    return sundayData.map(data => ({
-      ...data,
-      isClicked: false,
-      id: nanoid()
-    }))
-  })
-
-
-  const handleClick = (event) =>{
+  const handleEventOpen = (event) =>{
     const target = event.currentTarget // * gets target, and its attributes
     const {id} = target // ! ID of schedule
+    let eventClicked
 
-
-    // * If the id matches with the event that the user clicked, then its isClicked bool value becomes its opposite value
-    setSaturdaySchedule(prevSaturdaySchedule => {
-      return prevSaturdaySchedule.map(schedule =>({
-        ...schedule,
-        isClicked: schedule.id === id ? !schedule.isClicked : schedule.isClicked
-      }))
+    // ! Finds the event clicked by user
+    sundaySchedule.find(sundayEvent => {
+      if (sundayEvent.id === id){
+        eventClicked = sundayEvent
+      }
     })
 
-    setSundaySchedule(prevSundaySchedule => {
-      return prevSundaySchedule.map(schedule =>({
-        ...schedule,
-        isClicked: schedule.id === id ? !schedule.isClicked : schedule.isClicked
-      }))
+    saturdaySchedule.find(saturdayEvent => {
+      if (saturdayEvent.id === id){
+        eventClicked = saturdayEvent
+      }
     })
+
+    setPopUp({
+      ...eventClicked,
+      isClicked: true
+    })
+
   }
+  
+  const {workshopData,tentativeScheduleData} = scheduleData
+  const {saturdayData, sundayData} = tentativeScheduleData
+
+  const [popUp,setPopUp] = useState({isClicked:false}) // * initial value
+  const [windowDimensions, setWindowDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+
+
+  useEffect( () =>{
+    function handleResize(){
+      setWindowDimensions( () =>({
+        height: window.innerHeight,
+        width: window.innerWidth
+      }))
+    }
+    window.addEventListener("resize", handleResize)
+  },[])
+
+  console.log("Window Dimensions", windowDimensions)
+  console.log("Screen dimension: ", window.screen.width)
+  
+  // const [saturdaySchedule,setSaturdaySchedule] = useState(() =>{
+  //   const {saturdayData} = tentativeScheduleData
+  //   return saturdayData.map(data => ({
+  //     ...data,
+  //     isClicked: false,
+  //     id: nanoid()
+  //   }))
+  // })
+  // const [sundaySchedule, setSundaySchedule] = useState(() =>{
+  //   const {sundayData} = tentativeScheduleData
+  //   return sundayData.map(data => ({
+  //     ...data,
+  //     isClicked: false,
+  //     id: nanoid()
+  //   }))
+  // })
+
+  const sundaySchedule = sundayData.map(event => ({
+    ...event,
+    id:nanoid()
+  }))
+
+  const saturdaySchedule = saturdayData.map(event => ({
+    ...event,
+    id:nanoid()
+  }))
+
 
   return (
     <div className="App">
@@ -55,9 +91,11 @@ function App() {
       workshopData={workshopData} 
       saturdaySchedule={saturdaySchedule}
       sundaySchedule={sundaySchedule}
-      handleClick={handleClick}
+      handleEventOpen={handleEventOpen}
       nanoid={nanoid}
       />
+
+      {popUp.isClicked && <PopUp windowDimensions={windowDimensions}/>}
 
       </header>
     </div>
