@@ -25,6 +25,14 @@ function App() {
       }
     })
 
+    workshopSchedule.find(workshopEvent => {
+      if (workshopEvent.id === id){
+        eventClicked = workshopEvent
+      }
+    })
+
+
+
     setPopUp({
       ...eventClicked,
       isClicked: true
@@ -54,6 +62,11 @@ function App() {
     id:nanoid()
   }))
 
+  const workshopSchedule = workshopData.map(event => ({
+    ...event,
+    id:nanoid()
+  }))
+
   console.log("evcentL ", popUp)
 
   return (
@@ -61,7 +74,7 @@ function App() {
       <header className="App-header">
       <h1>Schedule Alerts</h1>
       <Schedule 
-      workshopData={workshopData} 
+      workshopSchedule={workshopSchedule} 
       saturdaySchedule={saturdaySchedule}
       sundaySchedule={sundaySchedule}
       handleOpen_PopUp={handleOpen_PopUp}

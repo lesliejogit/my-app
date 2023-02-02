@@ -48,13 +48,13 @@ export default function Schedule(props){
     title --> event--title ...
     */
     
-    const workshopEvents = props.workshopData.map(table => (
-        <div className="event--table" key={nanoid()}>
+    const workshopEvents = props.workshopSchedule.map(event => (
+        <div className="event--table"  key={event.id} onClick={props.handleOpen_PopUp} id={event.id} >
             <div className="grid--container">
-                <div className="event--time">{table.time}</div>
-                <div className="event--title"><b>{table.title}</b> <br/> {table.category}</div>
-                <div className="event--description">{table.description} </div>
-                <div className="event--location"> <h3>{table.location}</h3></div>
+                <div className="event--time">{event.time}</div>
+                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                <div className="event--description">{event.description} </div>
+                <div className="event--location"> <h3>{event.location}</h3></div>
             </div>
         </div> 
     ))
