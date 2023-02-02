@@ -136,7 +136,7 @@ h2{
 }
 
 .tentativeSchedule--container .event--location{
-  margin-right:10px;
+  margin:0 10px;
   max-width: 100px !;
   padding: 2px;
 }
@@ -187,7 +187,7 @@ h2{
 
 .event--location{
   background-color: #bddff5 ;
-  margin-right: 15px;
+  margin-right: 25px;
   border-radius: 30px;
 }
 
@@ -220,7 +220,8 @@ h2{
 }
 
 .popup--container {
-
+  display:flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 60px;
   margin: 0 50px;
@@ -229,28 +230,21 @@ h2{
   color:black;  
 
   max-width: 800px;
-  scale: 75%
+  scale: 55%
 }
 
-.popup--container > img{
-  pointer-events: none; /* Makes close window button clicable */
 
-}
-
-.popup--container > button{
-  background-color: #bddff5;
+.popup--container button{
+  
+  color: #E6534E;
   border:none;
+  background-color: #FFFFFF;
 
-  padding:10px;
-
-  border-radius: 10px;
-
-  font-family:"Poppins"
-
+  scale: 30%
 }
 
-.popup--container > button:hover{
-  background-color: #E6534E ;
+.popup--container  button:hover{
+  /* background-color: #bddff5 ; */
   opacity: .3;
   cursor:pointer !important
 }
@@ -259,6 +253,21 @@ h2{
   opacity: .5;
   cursor:pointer !important 
 }
+
+
+
+/** For Camrine's CSS */
+#modal--container{
+  margin-top: -80px;
+}
+#modal--container img{
+  scale:40%
+}
+
+#modal--container h3{
+  margin-top: -80px;
+}
+
 
 /* .event--table .event--container{
   display: grid;
