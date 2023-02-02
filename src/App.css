@@ -30,6 +30,8 @@
     
     margin-right: 10px;
 
+    scale: 90%
+
   }
   .event--title, .event--time, .event--description{
     font-size: 6px;
@@ -41,6 +43,10 @@
   }
   .event--location{
     margin-right: 10px !important;
+  }
+
+  .tentativeSchedule--container{
+    scale: 90%;
   }
 
    .tentativeSchedule--column .event--location{
@@ -219,6 +225,8 @@ h2{
   padding: 15px;
   color:black;  
 
+  max-width: 800px;
+
 }
 
 .popup--container > img{
@@ -226,6 +234,28 @@ h2{
 
 }
 
+.popup--container > button{
+  background-color: #bddff5;
+  border:none;
+
+  padding:10px;
+
+  border-radius: 10px;
+
+  font-family:"Poppins"
+
+}
+
+.popup--container > button:hover{
+  background-color: #E6534E ;
+  opacity: .3;
+  cursor:pointer !important
+}
+
+.event--table:hover{
+  opacity: .5;
+  cursor:pointer !important 
+}
 
 /* .event--table .event--container{
   display: grid;
