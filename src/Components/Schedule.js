@@ -5,7 +5,7 @@ export default function Schedule(props){
     const generateTentativeSchedule = () =>{
 
         const saturdayEvents = props.saturdaySchedule.map(event =>(
-            <div className="event--table" key={event.id} onClick={props.handleEventOpen} id={event.id} name="saturday" >
+            <div className="event--table" key={event.id} onClick={props.handleOpen_PopUp} id={event.id} name="saturday" >
                 <div className="event--container">
                     <div className="event--time">{event.time}</div>
                     <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
@@ -15,7 +15,7 @@ export default function Schedule(props){
             </div>
         ))
         const sundayEvents = props.sundaySchedule.map(event =>(
-            <div className="event--table" key={event.id} onClick={props.handleEventOpen} id={event.id} name="sunday" >
+            <div className="event--table" key={event.id} onClick={props.handleOpen_PopUp} id={event.id} name="sunday" >
                 <div className="event--container">
                     <div className="event--time">{event.time}</div>
                     <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>

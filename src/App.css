@@ -50,6 +50,13 @@
   .tentativeSchedule--column .event--container{
     max-height: 50px;
   }
+
+  .popup--container{
+    scale: 50%;
+  }
+  .popup--container h3{
+    font-size: 20px;
+  }
 }
 
 :root {
@@ -180,14 +187,34 @@ h2{
 }
 
 
-.popup--container{
-  position: absolute;
+.popup--overlay{
+  display: flex;
+  position: fixed;
   top: 0px;
   left: 0px;
-  width: 100px;
-  height: 100px;
-  /* align-self: center;
-  justify-self: center; */
+
+  height: 100vh;
+  width: 100%;
+
+  background:rgba(0, 0, 0, 0.5); /* Prevents children opacity change, only changes background opacity*/
+
+  justify-content: center;
+  align-items: center;
+}
+
+.popup--container {
+
+  background-color: white;
+  border-radius: 60px;
+  margin: 0 50px;
+
+  padding: 15px;
+  color:black;  
+
+}
+
+.popup--container > img{
+  pointer-events: none; /* Makes close window button clicable */
 
 }
 

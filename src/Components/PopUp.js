@@ -1,30 +1,23 @@
+// import image from "./Assets/"
 export default function PopUp(props){
-    const {height, width} = props.windowDimensions
-
-    const middleWidth = width/ 2
-    const middleHeight = height/ 2
-
-    console.log("middle width: ", middleWidth)
-    console.log("middle height: ", middleHeight)
-
-    // Sets div inside the middle
-    const stylesheet ={
-        position: "fixed",
-        left: middleWidth,
-        top: middleHeight,
-        alignSelf: "center",
-        justifySelf: "center",
-        backgroundColor: "black"
-        
-
-    }
-
-
-    // console.log("Height: ", middleHeight)
+    const {popUpData} = props
     return(
-        <div className="popup--container" style={stylesheet}>
-            <div>Title</div>
+        <div className="popup--overlay">
 
+            <div className="popup--container" >
+                <h1>{popUpData.title}</h1>
+                <p>{popUpData.description}</p>
+                <div style={{display:"flex", justifyContent:"space-around"}}>
+                    <h3 style={{paddingRight:"10px"}}>Time {popUpData.time}</h3>
+                    <h3>Location:{popUpData.location}</h3>
+                </div>
+                <img src={require("./images/icon_2_resize1.png")}/>
+                <br/> <br/>
+                <button onClick={props.handleClose_PopUp}>Close Window</button>
+            </div>
+
+            
         </div>
+        
     )
 }

@@ -43,13 +43,17 @@
                 "time" :"00:00AM",
                 "title" :"Python Competition",
                 "category" : "Coding Competition",
-                "location" : "Room 402"
+                "location" : "Room 402",
+                "description" : "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language"
+
             },
             {
                 "time" :"00:00AM",
                 "title" :"Python Competition",
                 "category" : "Coding Competition",
-                "location" : "Room 403"
+                "location" : "Room 403",
+                "description" : "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language"
+
             }
         ],
 
@@ -58,13 +62,17 @@
                 "time" :"00:00AM",
                 "title" :"Python Competition",
                 "category" : "Coding Competition",
-                "location" : "Room 402"
+                "location" : "Room 402",
+                "description" : "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language"
+
             },
             {
                 "time" :"00:00AM",
                 "title" :"Python Competition",
                 "category" : "Coding Competition",
-                "location" : "Room 402"
+                "location" : "Room 402",
+                "description" : "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language"
+
             }
         ]
     }

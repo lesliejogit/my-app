@@ -7,7 +7,7 @@ import PopUp from './Components/PopUp';
 
 function App() {
 
-  const handleEventOpen = (event) =>{
+  const handleOpen_PopUp = (event) =>{
     const target = event.currentTarget // * gets target, and its attributes
     const {id} = target // ! ID of schedule
     let eventClicked
@@ -30,47 +30,19 @@ function App() {
       isClicked: true
     })
 
+
+  } // handleOpen_PopUp
+
+  const handleClose_PopUp = () =>{
+    setPopUp((prevPopUp) => ({isClicked:false}))
   }
+
+  // const handle
   
   const {workshopData,tentativeScheduleData} = scheduleData
   const {saturdayData, sundayData} = tentativeScheduleData
 
   const [popUp,setPopUp] = useState({isClicked:false}) // * initial value
-  const [windowDimensions, setWindowDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth
-  })
-
-
-  useEffect( () =>{
-    function handleResize(){
-      setWindowDimensions( () =>({
-        height: window.innerHeight,
-        width: window.innerWidth
-      }))
-    }
-    window.addEventListener("resize", handleResize)
-  },[])
-
-  console.log("Window Dimensions", windowDimensions)
-  console.log("Screen dimension: ", window.screen.width)
-  
-  // const [saturdaySchedule,setSaturdaySchedule] = useState(() =>{
-  //   const {saturdayData} = tentativeScheduleData
-  //   return saturdayData.map(data => ({
-  //     ...data,
-  //     isClicked: false,
-  //     id: nanoid()
-  //   }))
-  // })
-  // const [sundaySchedule, setSundaySchedule] = useState(() =>{
-  //   const {sundayData} = tentativeScheduleData
-  //   return sundayData.map(data => ({
-  //     ...data,
-  //     isClicked: false,
-  //     id: nanoid()
-  //   }))
-  // })
 
   const sundaySchedule = sundayData.map(event => ({
     ...event,
@@ -82,6 +54,7 @@ function App() {
     id:nanoid()
   }))
 
+  console.log("evcentL ", popUp)
 
   return (
     <div className="App">
@@ -91,11 +64,11 @@ function App() {
       workshopData={workshopData} 
       saturdaySchedule={saturdaySchedule}
       sundaySchedule={sundaySchedule}
-      handleEventOpen={handleEventOpen}
+      handleOpen_PopUp={handleOpen_PopUp}
       nanoid={nanoid}
       />
 
-      {popUp.isClicked && <PopUp windowDimensions={windowDimensions}/>}
+      {popUp.isClicked && <PopUp popUpData={popUp} handleClose_PopUp={handleClose_PopUp}/>}
 
       </header>
     </div>
