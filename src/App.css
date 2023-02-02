@@ -45,9 +45,8 @@
     margin-right: 10px !important;
   }
 
-  .tentativeSchedule--container{
-    scale: 90%;
-  }
+
+
 
    .tentativeSchedule--column .event--location{
     margin-left: 10px !important;
@@ -60,11 +59,11 @@
   }
 
   .tentativeSchedule--column .event--time{
-    margin-left:5px;
+    margin-left:8px;
   }
 
   .popup--container{
-    scale: 50%;
+    scale: 50% !important;
   }
   .popup--container h3{
     font-size: 20px;
@@ -119,7 +118,7 @@ h2{
 
 .tentativeSchedule--container .event--container{
   display: grid !important ; 
-  grid-template-columns: 30% 40% 1fr !important ;
+  grid-template-columns: 35% 40% 1fr !important ;
   
   align-items: center;
   justify-content: space-evenly;
@@ -137,9 +136,9 @@ h2{
 }
 
 .tentativeSchedule--container .event--location{
-  margin-left: 30px ;
+  margin-right:10px;
   max-width: 100px !;
-  padding: 5px;
+  padding: 2px;
 }
 
 .event--table{
@@ -165,6 +164,10 @@ h2{
 
   font-size: 15px;
   color:black
+}
+
+.grid--container{
+  margin: 0 30px
 }
 
 .grid--container > div {
@@ -226,7 +229,7 @@ h2{
   color:black;  
 
   max-width: 800px;
-
+  scale: 75%
 }
 
 .popup--container > img{
