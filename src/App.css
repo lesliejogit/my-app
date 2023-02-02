@@ -14,10 +14,11 @@
 
   .event--location{
     margin-right: 50px;
+    font-size: 12px;
   }
 }
 
-@media(max-width: 480px){ /* For mobile phones */
+@media(max-width: 750px){ /* For mobile phones */
   h3{
     font-size: 6px;
     min-width: 35px;
@@ -28,11 +29,11 @@
     margin: 0px 0px 0px 10px;
     
     margin-right: 10px;
+
   }
   .event--title, .event--time, .event--description{
     font-size: 6px;
   }
-
 
   .event--title{
     max-height: 50px;
@@ -47,8 +48,13 @@
     margin-right: 10px;
   } 
 
+
   .tentativeSchedule--column .event--container{
     max-height: 50px;
+  }
+
+  .tentativeSchedule--column .event--time{
+    margin-left:5px;
   }
 
   .popup--container{
@@ -186,6 +192,7 @@ h2{
 .tentativeSchedule--column{
   scale: 90%;
 }
+
 
 
 .popup--overlay{
