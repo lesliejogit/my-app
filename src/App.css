@@ -107,7 +107,7 @@ h2{
 
 .tentativeSchedule--container .event--container{
   display: grid !important ; 
-  grid-template-columns: 20% 40% 1fr !important ;
+  grid-template-columns: 30% 40% 1fr !important ;
   
   align-items: center;
   justify-content: space-evenly;
@@ -127,6 +127,7 @@ h2{
 .tentativeSchedule--container .event--location{
   margin-left: 30px ;
   max-width: 100px !;
+  padding: 5px;
 }
 
 .event--table{
