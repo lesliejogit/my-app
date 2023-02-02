@@ -1,55 +1,66 @@
 @media (max-width: 1030px ){ /* For Laptops when resizing screen */
-  /* p{
-    font-size: 10px;
-  } */
-  h2{
+
+  .event--title > h3{
     font-size: 15px;
     min-width: 80px;
   }
-  .schedule--event--title, .schedule--event--time, .schedule--event--description{
-    font-size: 9px;
+  .event--title, .event--time, .event--description{
+    font-size: 10px;
   }
-  .schedule--event--title{
+  .event--title{
     max-height: 50px;
     border-width: 1px !important;
   }
 
-  .schedule--event--location{
+  .event--location{
     margin-right: 50px;
   }
 }
 
 @media(max-width: 480px){ /* For mobile phones */
-  h2{
+  h3{
     font-size: 6px;
     min-width: 35px;
   }
 
-  .schedule--event{
+  .grid--container{
     height: 50px !important;
-    margin: 0px 12px;
-    /* margin-right: 10px; */
+    margin: 0px 0px 0px 10px;
+    
+    margin-right: 10px;
   }
-  .schedule--event--title, .schedule--event--time, .schedule--event--description{
+  .event--title, .event--time, .event--description{
     font-size: 6px;
   }
 
-  
-  .schedule--event--title{
+
+  .event--title{
     max-height: 50px;
 
   }
-  .schedule--event--location{
-    margin-right: 20px !important;
+  .event--location{
+    margin-right: 10px !important;
   }
 
-  
+   .tentativeSchedule--column .event--location{
+    margin-left: 10px !important;
+    margin-right: 10px;
+  } 
+
+  .tentativeSchedule--column .event--container{
+    max-height: 50px;
+  }
+
+  .popup--container{
+    scale: 50%;
+  }
+  .popup--container h3{
+    font-size: 20px;
+  }
 }
 
-
-
 :root {
-  --primary-color: #f4f9ff;
+  --primary-color: ;
   --primary-focus: #04121C;
   --secondary-color: #2047DD;
   --accent-color: #AC20DD;
@@ -88,22 +99,16 @@ h1 {
   padding: 0;
   color: var(--primary-focus);
 }
-.schedule--table{
-  padding: 15px 0px;
-  font-family:"Poppins";
+
+h2{
+  font-family: "Poppins";
+  color: black
+}
+
+.tentativeSchedule--container .event--container{
+  display: grid !important ; 
+  grid-template-columns: 20% 40% 1fr !important ;
   
-}
-
-.schedule--div{
-  display: flex;
-  flex-direction: row;
-}
-
-
-
-.schedule--event{
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 
@@ -119,26 +124,102 @@ h1 {
   color:black
 }
 
-.schedule--event > div {
+.tentativeSchedule--container .event--location{
+  margin-left: 30px ;
+  max-width: 100px !;
+}
+
+.event--table{
+  padding: 15px 0px;
+  font-family:"Poppins";
+  
+}
+
+
+.grid--container{
+  display: grid !important ; 
+  grid-template-columns: 1fr 1fr 2fr 1fr !important ;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100px;
+
+  /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
+  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  
+  background-color: #FFFFFF;
+  border-radius: 60px;
+
+  font-size: 15px;
+  color:black
+}
+
+.grid--container > div {
   padding: 0px 10px;
 }
 
-.schedule--event--title{
+.event--title{
   border-left: solid;
   border-right: solid;
   border-width: 2px;
 }
 
-.schedule--event--description{
+.event--description{
   text-align: left;
   max-width: 500px;
-  
 }
 
-.schedule--event--location{
+.event--location{
   background-color: #bddff5 ;
-  margin-right: 30px;
+  margin-right: 15px;
   border-radius: 30px;
 }
 
+.tentativeSchedule--container{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-top: -30px;
+}
 
+.tentativeSchedule--column{
+  scale: 90%;
+}
+
+
+.popup--overlay{
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  height: 100vh;
+  width: 100%;
+
+  background:rgba(0, 0, 0, 0.5); /* Prevents children opacity change, only changes background opacity*/
+
+  justify-content: center;
+  align-items: center;
+}
+
+.popup--container {
+
+  background-color: white;
+  border-radius: 60px;
+  margin: 0 50px;
+
+  padding: 15px;
+  color:black;  
+
+}
+
+.popup--container > img{
+  pointer-events: none; /* Makes close window button clicable */
+
+}
+
+
+/* .event--table .event--container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+} */

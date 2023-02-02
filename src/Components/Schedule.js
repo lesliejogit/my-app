@@ -1,37 +1,74 @@
+import PopUp from "./PopUp"
+
 export default function Schedule(props){
-    const generateEvents = () =>{
-        const numEvents = 5
-        const sampleData = []
-        const sampleEvent = {
-            time: "00:00AM",
-            event:{
-                title:"Python Competetion",
-                category: "Coding Competetion"
-            },
-            description: "Show off your python Skills in a collaborative project. Up to 5 team members using the python programming language",
-            location: "Room 402"
-        }
-    
-        for (let i=0;i<numEvents; i++){
-            sampleData.push(sampleEvent)
-        }
-    
-        return sampleData
+    const {nanoid} = props
+    const generateTentativeSchedule = () =>{
+
+        const saturdayEvents = props.saturdaySchedule.map(event =>(
+            <div className="event--table" key={event.id} onClick={props.handleOpen_PopUp} id={event.id} name="saturday" >
+                <div className="event--container">
+                    <div className="event--time">{event.time}</div>
+                    <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                    <div className="event--location"> <h3> {event.location} </h3></div>
+                </div>
+                {event.isClicked && <PopUp/>}
+            </div>
+        ))
+        const sundayEvents = props.sundaySchedule.map(event =>(
+            <div className="event--table" key={event.id} onClick={props.handleOpen_PopUp} id={event.id} name="sunday" >
+                <div className="event--container">
+                    <div className="event--time">{event.time}</div>
+                    <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                    <div className="event--location"> <h3> {event.location} </h3></div>
+            </div>
+            {event.isClicked && <PopUp/>}
+        </div>
+        ))
+
+
+        
+        return (
+        <div className="tentativeSchedule--container"> 
+            <div className="tentativeSchedule--column">
+                <h2>Saturday</h2>
+                {saturdayEvents}
+            </div> 
+            
+            <div className="tentativeSchedule--column">
+                <h2>Sunday</h2>
+                {sundayEvents}
+            </div>
+        </div>
+        )
     }
+
+    /*
+    schedule--event --> event--container
+    time --> event--time
+    title --> event--title ...
+    */
     
-    const sampleEvents = generateEvents().map(table => (
-        <div className="schedule--table">
-            <div className="schedule--event">
-                <div className="schedule--event--time">{table.time}</div>
-                <div className="schedule--event--title"><b>{table.event.title}</b> <br/> {table.event.category}</div>
-                <div className="schedule--event--description">{table.description} </div>
-                <div className="schedule--event--location"> <h2>{table.location}</h2></div>
+    const workshopEvents = props.workshopSchedule.map(event => (
+        <div className="event--table"  key={event.id} onClick={props.handleOpen_PopUp} id={event.id} >
+            <div className="grid--container">
+                <div className="event--time">{event.time}</div>
+                <div className="event--title"><b>{event.title}</b> <br/> {event.category}</div>
+                <div className="event--description">{event.description} </div>
+                <div className="event--location"> <h3>{event.location}</h3></div>
             </div>
         </div> 
     ))
 
+    const tentativeSchedule = generateTentativeSchedule()
+
     
     return (
-        sampleEvents
+        <div>
+            <h2>Tentative Schedule</h2>
+            {tentativeSchedule}
+
+            <h2>Workshop Events</h2>
+            {workshopEvents}
+        </div>
     )
   }
