@@ -1,7 +1,6 @@
 import PopUp from "./PopUp"
 
 export default function Schedule(props){
-    const {nanoid} = props
     const generateTentativeSchedule = () =>{
 
         const saturdayEvents = props.saturdaySchedule.map(event =>(
