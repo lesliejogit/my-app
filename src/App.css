@@ -72,6 +72,11 @@
   .popup--container p{
     line-height: 30px !important;
   }
+
+  #modal--container img{
+    scale:30% !important
+  }
+  
 }
 
 @media(max-width: 280px){ /* For galaxy fold :( */
