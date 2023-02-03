@@ -126,13 +126,18 @@ h2{
   height: 100px;
 
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
-  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 15%);  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;  
   
   background-color: #FFFFFF;
   border-radius: 60px;
 
   font-size: 15px;
   color:black
+}
+
+.tentativeSchedule--container .event--container:active{
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .tentativeSchedule--container .event--location{
@@ -157,13 +162,18 @@ h2{
   height: 100px;
 
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
-  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;;  
   
   background-color: #FFFFFF;
   border-radius: 60px;
 
   font-size: 15px;
   color:black
+}
+
+.grid--container:active{
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .grid--container{
@@ -239,7 +249,7 @@ h2{
   border:none;
   background-color: #FFFFFF;
 
-  scale: 30%
+  scale: 45%
 }
 
 .popup--container  button:hover{

@@ -12,7 +12,7 @@ export default function PopUp(props){
     const popUpSrc_1 = require("./images/icon_1.png") 
     const popUpSrc_2 = require("./images/icon_2.png")
 
-    const popUpIconsSrc = [require("./images/icon_1.png"), require("./images/icon_2.png"),require("./images/icon_3.png") ] // * Stickers!
+    const popUpIconsSrc = [require("./images/icon_1.png"), require("./images/icon_2.png") ] // * Stickers!
     const randomIconSrc = popUpIconsSrc[Math.floor(Math.random() * popUpIconsSrc.length)]
 
 
