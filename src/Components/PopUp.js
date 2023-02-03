@@ -7,15 +7,11 @@ export default function PopUp(props){
         marginRight: "5px"
     }
 
+    // const testIcon = require("./images/icon_3.png")
     const closeButtonSrc = require("./images/remove_resize1.png")
-
-    const popUpSrc_1 = require("./images/icon_1.png") 
-    const popUpSrc_2 = require("./images/icon_2.png")
 
     const popUpIconsSrc = [require("./images/icon_1.png"), require("./images/icon_2.png") ] // * Stickers!
     const randomIconSrc = popUpIconsSrc[Math.floor(Math.random() * popUpIconsSrc.length)]
-
-
 
     return(
         <div className="popup--overlay">

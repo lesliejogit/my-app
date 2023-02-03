@@ -68,6 +68,32 @@
   .popup--container h3{
     font-size: 20px;
   }
+
+  .popup--container p{
+    line-height: 30px !important;
+  }
+}
+
+@media(max-width: 280px){ /* For galaxy fold :( */
+  .event--description{
+    display: none;
+  }
+
+  .tentativeSchedule--column  .event--location{
+    scale: 50%;
+    margin-left: -5px !important;
+    padding-right: 20px;
+  }
+
+  .grid--container .event--location{
+    margin-left: 30%;
+  }
+
+
+  .popup--container{
+    scale:40% !important
+  }
+
 }
 
 :root {
@@ -118,7 +144,7 @@ h2{
 
 .tentativeSchedule--container .event--container{
   display: grid !important ; 
-  grid-template-columns: 35% 40% 1fr !important ;
+  grid-template-columns: 30% 40% 1fr !important ;
   
   align-items: center;
   justify-content: space-evenly;
@@ -235,11 +261,15 @@ h2{
   border-radius: 60px;
   margin: 0 50px;
 
-  padding: 15px;
+  padding: 15px 15px;
   color:black;  
 
   max-width: 800px;
-  scale: 45%
+  scale: 45%;
+}
+
+.popup--container p{
+  line-height: 40px;
 }
 
 
@@ -274,7 +304,7 @@ h2{
   margin-top: -80px;
 }
 #modal--container img{
-  scale:40%
+  scale:50%
 }
 
 #modal--container h3{
