@@ -1,21 +1,11 @@
 @media (max-width: 1030px ){ /* For Laptops when resizing screen */
-
-  .event--title > h3{
-    font-size: 15px;
-    min-width: 80px;
+  .grid--container .event--description {
+    scale: 80%;
   }
-  .event--title, .event--time, .event--description{
-    font-size: 10px;
-  }
-  .event--title{
-    max-height: 50px;
-    border-width: 1px !important;
+  .tentativeSchedule--column .event--container div{
+    scale: 60%;
   }
 
-  .event--location{
-    margin-right: 50px;
-    font-size: 12px;
-  }
 }
 
 @media(max-width: 750px){ /* For mobile phones */
@@ -79,7 +69,7 @@
   
 }
 
-@media(max-width: 280px){ /* For galaxy fold :( */
+@media(max-width: 300px){ /* For galaxy fold :( */
   .event--description{
     display: none;
   }
