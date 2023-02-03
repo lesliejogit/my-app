@@ -7,22 +7,26 @@ export default function PopUp(props){
         marginRight: "5px"
     }
 
-    const buttonSrc = require("./images/remove_resize1.png")
-    const popUpSrc = require("./images/icon_2_resize1.png")
+    const closeButtonSrc = require("./images/remove_resize1.png")
+
+    const popUpSrc_1 = require("./images/icon_1.png") 
+    const popUpSrc_2 = require("./images/icon_2.png")
+
+    const popUpIconsSrc = [require("./images/icon_1.png"), require("./images/icon_2.png"),require("./images/icon_3.png") ] // * Stickers!
+    const randomIconSrc = popUpIconsSrc[Math.floor(Math.random() * popUpIconsSrc.length)]
+
+
 
     return(
         <div className="popup--overlay">
-
             <div className="popup--container" >
-                <div style={buttonContainerStyle}><button onClick={props.handleClose_PopUp}><img src={buttonSrc}/></button></div>
+                <div style={buttonContainerStyle}><button onClick={props.handleClose_PopUp}><img src={closeButtonSrc}/></button></div>
                 <h1>{popUpData.title}</h1>
                 <p>{popUpData.description}</p>
                 <Modal/>
-                <img src={popUpSrc}/>
+                <img src={randomIconSrc}  id="popUpImg"/>
                 <br/> <br/>
             </div>
-
-            
         </div>
         
     )

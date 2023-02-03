@@ -1,4 +1,4 @@
-export default function Modal(){
+export default function Modal(props){
     let discordImg = require("./images/discord.png")
     let googleImg = require("./images/google_resize3.png")
 
@@ -7,11 +7,11 @@ export default function Modal(){
         <>
             <h2>Get Notified</h2>
             <div id="modal--container"style={{display:"flex", justifyContent:"center"}}>
-                <a>
+                <a href="https://www.w3schools.com" target="_blank">
                     <img src={discordImg}  />
                     <h3>Discord</h3>
                 </a>
-                <a>
+                <a href="https://www.w3schools.com" target="_blank">
                     <img src={googleImg} />
                     <h3>Google</h3>
                 </a>

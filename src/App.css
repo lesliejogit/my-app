@@ -34,7 +34,7 @@
 
   }
   .event--title, .event--time, .event--description{
-    font-size: 6px;
+    font-size: 4px !important;
   }
 
   .event--title{
@@ -126,7 +126,7 @@ h2{
   height: 100px;
 
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
-  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 15%);  
   
   background-color: #FFFFFF;
   border-radius: 60px;
@@ -183,6 +183,7 @@ h2{
 .event--description{
   text-align: left;
   max-width: 500px;
+  font-size: 12px;
 }
 
 .event--location{
@@ -201,8 +202,6 @@ h2{
 .tentativeSchedule--column{
   scale: 90%;
 }
-
-
 
 .popup--overlay{
   display: flex;
@@ -230,12 +229,12 @@ h2{
   color:black;  
 
   max-width: 800px;
-  scale: 55%
+  scale: 45%
 }
 
 
 .popup--container button{
-  
+
   color: #E6534E;
   border:none;
   background-color: #FFFFFF;
@@ -254,6 +253,10 @@ h2{
   cursor:pointer !important 
 }
 
+#popUpImg{
+  scale: 70%;
+}
+
 
 
 /** For Camrine's CSS */
@@ -269,7 +272,4 @@ h2{
 }
 
 
-/* .event--table .event--container{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-} */
+
