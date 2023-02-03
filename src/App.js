@@ -13,6 +13,7 @@ function App() {
     let eventClicked
 
     // ! Finds the event clicked by user
+
     sundaySchedule.find(sundayEvent => {
       if (sundayEvent.id === id){
         eventClicked = sundayEvent
@@ -31,8 +32,6 @@ function App() {
       }
     })
 
-
-
     setPopUp({
       ...eventClicked,
       isClicked: true
@@ -42,8 +41,8 @@ function App() {
   } // handleOpen_PopUp
 
   const handleClose_PopUp = () =>{
-    setPopUp((prevPopUp) => ({isClicked:false}))
-  }
+    setPopUp((prevPopUp) => ({isClicked:false})) // * For button in popup
+  } // handleClose_PopUp
 
   // const handle
   
@@ -52,6 +51,8 @@ function App() {
 
   const [popUp,setPopUp] = useState({isClicked:false}) // * initial value
 
+
+  // * Adds and id for each event
   const sundaySchedule = sundayData.map(event => ({
     ...event,
     id:nanoid()
@@ -67,7 +68,6 @@ function App() {
     id:nanoid()
   }))
 
-  console.log("evcentL ", popUp)
 
   return (
     <div className="App">

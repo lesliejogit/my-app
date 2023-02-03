@@ -1,23 +1,14 @@
 @media (max-width: 1030px ){ /* For Laptops when resizing screen */
-
-  .event--title > h3{
-    font-size: 15px;
-    min-width: 80px;
+  .grid--container .event--description {
+    scale: 80%;
   }
-  .event--title, .event--time, .event--description{
-    font-size: 10px;
-  }
-  .event--title{
-    max-height: 50px;
-    border-width: 1px !important;
+  .tentativeSchedule--column .event--container div{
+    scale: 60%;
   }
 
-  .event--location{
-    margin-right: 50px;
-  }
 }
 
-@media(max-width: 480px){ /* For mobile phones */
+@media(max-width: 750px){ /* For mobile phones */
   h3{
     font-size: 6px;
     min-width: 35px;
@@ -28,11 +19,13 @@
     margin: 0px 0px 0px 10px;
     
     margin-right: 10px;
+
+    scale: 90%
+
   }
   .event--title, .event--time, .event--description{
-    font-size: 6px;
+    font-size: 4px !important;
   }
-
 
   .event--title{
     max-height: 50px;
@@ -42,21 +35,60 @@
     margin-right: 10px !important;
   }
 
+
+
+
    .tentativeSchedule--column .event--location{
     margin-left: 10px !important;
     margin-right: 10px;
   } 
 
+
   .tentativeSchedule--column .event--container{
     max-height: 50px;
   }
 
+  .tentativeSchedule--column .event--time{
+    margin-left:8px;
+  }
+
   .popup--container{
-    scale: 50%;
+    scale: 50% !important;
   }
   .popup--container h3{
     font-size: 20px;
   }
+
+  .popup--container p{
+    line-height: 30px !important;
+  }
+
+  #modal--container img{
+    scale:30% !important
+  }
+  
+}
+
+@media(max-width: 300px){ /* For galaxy fold :( */
+  .event--description{
+    display: none;
+  }
+
+  .tentativeSchedule--column  .event--location{
+    scale: 50%;
+    margin-left: -5px !important;
+    padding-right: 20px;
+  }
+
+  .grid--container .event--location{
+    margin-left: 30%;
+  }
+
+
+  .popup--container{
+    scale:40% !important
+  }
+
 }
 
 :root {
@@ -107,7 +139,7 @@ h2{
 
 .tentativeSchedule--container .event--container{
   display: grid !important ; 
-  grid-template-columns: 20% 40% 1fr !important ;
+  grid-template-columns: 30% 40% 1fr !important ;
   
   align-items: center;
   justify-content: space-evenly;
@@ -115,7 +147,7 @@ h2{
   height: 100px;
 
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
-  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;  
   
   background-color: #FFFFFF;
   border-radius: 60px;
@@ -124,9 +156,15 @@ h2{
   color:black
 }
 
+.tentativeSchedule--container .event--container:active{
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 .tentativeSchedule--container .event--location{
-  margin-left: 30px ;
+  margin:0 10px;
   max-width: 100px !;
+  padding: 2px;
 }
 
 .event--table{
@@ -145,13 +183,22 @@ h2{
   height: 100px;
 
   /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%); */
-  box-shadow: -5px 14px 23px -2px rgb(0 0 0 / 10%);  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;;  
   
   background-color: #FFFFFF;
   border-radius: 60px;
 
   font-size: 15px;
   color:black
+}
+
+.grid--container:active{
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.grid--container{
+  margin: 0 30px
 }
 
 .grid--container > div {
@@ -167,11 +214,12 @@ h2{
 .event--description{
   text-align: left;
   max-width: 500px;
+  font-size: 12px;
 }
 
 .event--location{
   background-color: #bddff5 ;
-  margin-right: 15px;
+  margin-right: 25px;
   border-radius: 30px;
 }
 
@@ -185,7 +233,6 @@ h2{
 .tentativeSchedule--column{
   scale: 90%;
 }
-
 
 .popup--overlay{
   display: flex;
@@ -203,23 +250,61 @@ h2{
 }
 
 .popup--container {
-
+  display:flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 60px;
   margin: 0 50px;
 
-  padding: 15px;
+  padding: 15px 15px;
   color:black;  
 
+  max-width: 800px;
+  scale: 45%;
 }
 
-.popup--container > img{
-  pointer-events: none; /* Makes close window button clicable */
-
+.popup--container p{
+  line-height: 40px;
 }
 
 
-/* .event--table .event--container{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-} */
+.popup--container button{
+
+  color: #E6534E;
+  border:none;
+  background-color: #FFFFFF;
+
+  scale: 45%
+}
+
+.popup--container  button:hover{
+  /* background-color: #bddff5 ; */
+  opacity: .3;
+  cursor:pointer !important
+}
+
+.event--table:hover{
+  opacity: .5;
+  cursor:pointer !important 
+}
+
+#popUpImg{
+  scale: 70%;
+}
+
+
+
+/** For Camrine's CSS */
+#modal--container{
+  margin-top: -80px;
+}
+#modal--container img{
+  scale:50%
+}
+
+#modal--container h3{
+  margin-top: -80px;
+}
+
+
+
